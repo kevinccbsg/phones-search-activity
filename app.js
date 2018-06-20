@@ -9,20 +9,19 @@ const models = require('./mockData');
 
 const app = express();
 
-app.use(helmet())
-app.use(compression())
+app.use(helmet());
+app.use(compression());
 
-app.get('/', (req, res) => {
-  debug('GET /'); 
-  res.status(200).json({
-    data: 0,
-  });
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/phones', (req, res) => {
+app.get('/api/phones', (req, res) => {
   res.status(200).json({
     data: models,
   });
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(__dirname, 'public', 'index.html');
 });
 
 module.exports = app;
