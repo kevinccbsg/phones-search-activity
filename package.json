@@ -4,7 +4,8 @@
   "description": "You can find your favorites phones",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "DEBUG=PHONE:* node bin/www"
   },
   "keywords": [
     "node",
