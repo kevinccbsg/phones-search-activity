@@ -1,0 +1,18 @@
+{
+  "name": "phone-searcher",
+  "version": "1.0.0",
+  "description": "You can find your favorites phones",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "node",
+    "react",
+    "jest",
+    "enzyme",
+    "phones"
+  ],
+  "author": "Kevin Julián Martínez Escobar",
+  "license": "ISC"
+}
