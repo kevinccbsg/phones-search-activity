@@ -1,6 +1,6 @@
 # Phone Searcher
 
-You can check all your favorite phones
+You can check all your favorite phones. [Demo link](https://phone-searcher-kdrbslrogk.now.sh/)
 
 # initiate the project
 
