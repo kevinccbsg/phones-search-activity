@@ -22,7 +22,7 @@ If you want to develop in the project you will need to follow these steps
 npm run webpack
 ```
 
-**Watch mode**
+*Watch mode*
 
 ```
 npm run webpack -- -w
@@ -34,7 +34,7 @@ npm run webpack -- -w
 npm test
 ```
 
-**Watch mode**
+*Watch mode*
 
 ```
 npm test -- --watch
