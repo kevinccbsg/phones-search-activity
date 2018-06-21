@@ -1,38 +1,65 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+const getImage = (color, object) => object[`${color}:image`];
 
 class PhoneDetailComponent extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       open: false,
+      image: getImage('default', props),
     };
+    this.handleColor = this.handleColor.bind(this);
+    this.handleInfo = this.handleInfo.bind(this);
+  }
+
+  handleInfo() {
+    this.setState({ open: !this.state.open });
+  }
+
+  handleColor(color) {
+    this.setState({
+      image: getImage('default', this.props),
+    });
   }
 
   render() {
+    const { image, open } = this.state;
+    const {
+      title,
+      description,
+      colors,
+      price,
+    } = this.props;
+    const stateClassName = (open) ? 'open' : 'close';
     return (
-      <div className="phone-item ui link cards">
+      <div className={`phone-item ui link cards ${stateClassName}`}>
         <div className="card">
           <div className="image">
-            <img src="/images/avatar2/large/matthew.png" />
+            <img src={image} />
           </div>
           <div className="content">
-            <div className="header">Phone title</div>
+            <div className="header">{title}</div>
             <div className="meta">
-              <a>Price $</a>
+              <a>{price}</a>
             </div>
             <div className="description">
-              description
+              {description}
             </div>
           </div>
           <div className="extra content">
-            <span className="right floated">
+            <span onClick={this.handleInfo} className="right floated">
               + Información
             </span>
             <span>
-              <i className="circle icon"></i>
-              <i className="circle icon"></i>
-              <i className="circle icon"></i>
-              <i className="circle icon"></i>
+              {colors.map(obj => (
+                <i
+                  onClick={() => this.handleColor(obj)}
+                  key={obj}
+                  className={`circle icon ${obj}`}
+                />
+              ))}
             </span>
           </div>
         </div>
@@ -40,5 +67,19 @@ class PhoneDetailComponent extends Component {
     );
   }
 }
+
+PhoneDetailComponent.defaultProps = {
+  title: 'Phone',
+  description: 'Lorem ipsum dolor sit amet',
+  colors: ['silver', 'black'],
+  price: '1000$',
+};
+
+PhoneDetailComponent.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  colors: PropTypes.array,
+  price: PropTypes.string,
+};
 
 export default PhoneDetailComponent;
