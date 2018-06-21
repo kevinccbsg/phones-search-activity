@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
-
-const Header = () => <h1>Titulo</h1>;
+import AppContainer from './containers/App';
 
 render((
-  <Header />
+  <AppContainer />
 ), document.getElementById('root'));
