@@ -1,0 +1,57 @@
+
+html, body {
+  background: #f2f2f2;
+}
+
+#root {
+  margin-bottom: 40px;
+  background: #f2f2f2;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  background-color: #0c0c0c;
+  color: #e6e7e9;
+  margin-bottom: 30px;
+}
+
+.phone-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#root .phone-list-container .phone-item {
+  margin: 0;
+}
+
+#root .phone-list-container .phone-item .card:hover {
+  cursor: default;
+}
+
+.phone-item .description {
+  transition: all .3s linear;
+  overflow-y: auto;
+  margin: 0;
+}
+
+.phone-item .content {
+  padding-bottom: 5px;
+}
+
+.phone-item .cursor-icon {
+  cursor: pointer;
+}
+
+.phone-item.open .description {
+  max-height: 600px;
+  opacity: 1;
+}
+
+.phone-item.close .description {
+  max-height: 0px;
+  opacity: 0;
+}

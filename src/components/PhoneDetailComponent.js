@@ -20,14 +20,14 @@ class PhoneDetailComponent extends Component {
 
   handleColor(color) {
     this.setState({
-      image: getImage('default', this.props),
+      image: getImage(color, this.props),
     });
   }
 
   render() {
     const { image, open } = this.state;
     const {
-      title,
+      name,
       description,
       colors,
       price,
@@ -40,7 +40,7 @@ class PhoneDetailComponent extends Component {
             <img src={image} />
           </div>
           <div className="content">
-            <div className="header">{title}</div>
+            <div className="header">{name}</div>
             <div className="meta">
               <a>{price}</a>
             </div>
@@ -49,7 +49,7 @@ class PhoneDetailComponent extends Component {
             </div>
           </div>
           <div className="extra content">
-            <span onClick={this.handleInfo} className="right floated">
+            <span onClick={this.handleInfo} className="cursor-icon right floated">
               + Información
             </span>
             <span>
@@ -57,7 +57,7 @@ class PhoneDetailComponent extends Component {
                 <i
                   onClick={() => this.handleColor(obj)}
                   key={obj}
-                  className={`circle icon ${obj}`}
+                  className={`cursor-icon circle icon ${obj}`}
                 />
               ))}
             </span>
@@ -69,14 +69,14 @@ class PhoneDetailComponent extends Component {
 }
 
 PhoneDetailComponent.defaultProps = {
-  title: 'Phone',
+  name: 'Phone',
   description: 'Lorem ipsum dolor sit amet',
   colors: ['silver', 'black'],
   price: '1000$',
 };
 
 PhoneDetailComponent.propTypes = {
-  title: PropTypes.string,
+  name: PropTypes.string,
   description: PropTypes.string,
   colors: PropTypes.array,
   price: PropTypes.string,
