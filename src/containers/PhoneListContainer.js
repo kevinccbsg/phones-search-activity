@@ -1,22 +1,59 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { getPhones } from '../actions';
 import PhoneDetailComponent from '../components/PhoneDetailComponent';
+import Spinner from '../components/Spinner';
 
-class PhoneListContainer extends Component {
+
+export class PhoneListContainer extends Component {
   constructor() {
     super();
     this.state = {
-      phones: [],
     };
   }
 
+  componentDidMount() {
+    this.props.getPhones();
+  }
+
   render () {
+    const { loading, phones } = this.props;
     return (
       <div className="phone-list-container">
-        <PhoneDetailComponent />
-        <PhoneDetailComponent />
+        {loading && (
+          <Spinner />
+        )}
+        {phones.map(obj => (
+          <PhoneDetailComponent key={obj.id} {...obj} />
+        ))}
       </div>
     );
   }
 }
 
-export default PhoneListContainer;
+PhoneListContainer.defaultProps = {
+  loading: true,
+  error: false,
+  phones: [],
+};
+
+PhoneListContainer.propTypes = {
+  loading: PropTypes.bool,
+  phones: PropTypes.array,
+  loading: PropTypes.bool,
+};
+
+const mapStateToProps = (store) => ({
+  phones: store.phones,
+  loading: store.loading,
+  error: store.error,
+});
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    getPhones,
+  }, dispatch);
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PhoneListContainer);

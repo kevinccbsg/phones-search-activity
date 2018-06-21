@@ -18,6 +18,7 @@
   "author": "Kevin Julián Martínez Escobar",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "compression": "^1.7.2",
     "debug": "^3.1.0",
@@ -30,6 +31,7 @@
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
+    "redux-promise-middleware": "^5.1.1",
     "supertest": "^3.1.0"
   },
   "devDependencies": {

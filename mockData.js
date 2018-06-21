@@ -5,7 +5,7 @@ module.exports = [
     id: uuid.v4(),
     name: 'iPhone X',
     description: 'Pantalla Super Retina HD2 5.8", Cámaras con gran angular y teleobjetivo 12 MP Face ID, Chip A11 Bionic, Carga inalámbrica',
-    color: [
+    colors: [
       'black',
       'default',
     ],
@@ -17,7 +17,7 @@ module.exports = [
     id: uuid.v4(),
     name: 'iPhone 8 Plus',
     description: 'Pantalla Retina HD2 5.5", Cámaras con gran angular y teleobjetivo 12 MP Touch ID, Chip A11 Bionic, Carga inalámbrica',
-    color: [
+    colors: [
       'black',
       'default',
       'yellow',
@@ -33,7 +33,7 @@ module.exports = [
     id: uuid.v4(),
     name: 'iPhone 8 Plus',
     description: 'Pantalla Retina HD2 4.7", Cámaras con gran angular y teleobjetivo 12 MP Touch ID, Chip A11 Bionic, Carga inalámbrica',
-    color: [
+    colors: [
       'black',
       'default',
       'yellow',

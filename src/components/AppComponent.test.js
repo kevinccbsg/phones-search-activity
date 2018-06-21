@@ -10,6 +10,6 @@ describe('App', () => {
   });
 
   it('Render PhoneListContainer', () => {
-    expect(app.find('PhoneListContainer').exists()).toEqual(true);
+    expect(app.find('Connect(PhoneListContainer)').exists()).toEqual(true);
   });
 });
