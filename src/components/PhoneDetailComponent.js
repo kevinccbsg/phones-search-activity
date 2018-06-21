@@ -49,7 +49,7 @@ class PhoneDetailComponent extends Component {
             </div>
           </div>
           <div className="extra content">
-            <span onClick={this.handleInfo} className="cursor-icon right floated">
+            <span onClick={this.handleInfo} id="moreInfo" className="cursor-icon right floated">
               + Información
             </span>
             <span>
