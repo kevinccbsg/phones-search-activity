@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest",
     "webpack": "webpack",
-    "start": "DEBUG=PHONE:* node bin/www"
+    "start": "DEBUG=PHONE:* node bin/www",
+    "production": "NODE_ENV=production npm run webpack && node bin/www"
   },
   "keywords": [
     "node",
