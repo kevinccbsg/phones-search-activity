@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PhoneListContainer from './PhoneListContainer'
+import PhoneListContainer from './../containers/PhoneListContainer';
 
 const App = () => (
   <div>
