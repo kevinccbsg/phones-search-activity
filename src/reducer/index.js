@@ -1,7 +1,7 @@
 import { GET_PHONES } from './../actions';
 
 
-const initialState = {
+export const initialState = {
   loading: true,
   phones: [],
   error: false,
