@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const workboxPlugin = require('workbox-webpack-plugin')
 
 const mode = (process.env.NODE_ENV === 'production') ? 'production' : 'development';
 
@@ -26,6 +27,10 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'assets', 'index.html'),
+    }),
+    new workboxPlugin.InjectManifest({
+      swSrc: './src/sw.js',
+      swDest: 'sw.js',
     })
   ],
   mode,
